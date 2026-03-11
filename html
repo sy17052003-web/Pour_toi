@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Remerciement</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#ff758c,#ff7eb3);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:0;
+color:white;
+text-align:center;
+}
+
+.container{
+background:rgba(255,255,255,0.15);
+padding:40px;
+border-radius:20px;
+width:350px;
+backdrop-filter: blur(10px);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+input{
+padding:12px;
+width:80%;
+border:none;
+border-radius:10px;
+font-size:16px;
+margin-top:10px;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:10px;
+background:#ff4b5c;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#ff1f3d;
+transform:scale(1.05);
+}
+
+#merci{
+display:none;
+font-size:22px;
+line-height:1.6;
+animation:fade 1s ease;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="formulaire">
+<h2>⚽ Entre ton surnom ❤️</h2>
+<input type="text" id="surnom" placeholder="Ton surnom 😎">
+<br>
+<button onclick="afficher()">✨ Envoyer</button>
+</div>
+
+<div id="merci">
+<p id="message"></p>
+</div>
+
+</div>
+
+<script>
+
+function afficher(){
+
+let surnom=document.getElementById("surnom").value;
+
+if(surnom===""){
+alert("Entre ton surnom 😊");
+return;
+}
+
+document.getElementById("formulaire").style.display="none";
+document.getElementById("merci").style.display="block";
+
+document.getElementById("message").innerHTML=
+"❤️ "+surnom+" ❤️<br><br>"+
+"Je voulais simplement te dire merci pour ce maillot ⚽👕.<br>"+
+"Ce n'est pas juste un cadeau, c'est un geste qui me touche vraiment.<br><br>"+
+"Merci du fond du cœur 🙏✨";
+}
+
+</script>
+
+</body>
+</html>
